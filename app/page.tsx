@@ -5,6 +5,13 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/componen
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Heart } from 'lucide-react';
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
 const SpaceHighlighter = () => {
   const [text, setText] = useState('');
   
@@ -103,6 +110,44 @@ const SpaceHighlighter = () => {
           <span>for white space enthusiasts</span>
         </CardFooter>
       </Card>
+
+      {/* FAQ Section */}
+      <div className="bg-white rounded-lg p-6 shadow-sm">
+        <h2 className="text-2xl font-semibold text-slate-800 mb-4">FAQ</h2>
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="item-1">
+            <AccordionTrigger className="text-slate-700">
+              How can I automatically count spaces in a sentence?
+            </AccordionTrigger>
+            <AccordionContent className="text-slate-600">
+              There are several ways to count spaces automatically:
+              <ul className="list-disc pl-6 mt-2 space-y-2">
+                <li>Use this tool by simply pasting your text into the input area</li>
+                <li>In JavaScript: <code className="bg-slate-100 px-2 py-1 rounded">sentence.split(&quot; &quot;).length - 1</code></li>
+                <li>In Python: <code className="bg-slate-100 px-2 py-1 rounded">sentence.count(&quot; &quot;)</code></li>
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-2">
+            <AccordionTrigger className="text-slate-700">
+              Why does my text have different space percentages?
+            </AccordionTrigger>
+            <AccordionContent className="text-slate-600">
+              Space percentage varies based on word length and writing style. Technical writing often has fewer spaces (10-15%), while creative writing might have more (15-20%) due to shorter words and different punctuation patterns.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-3">
+            <AccordionTrigger className="text-slate-700">
+              What is considered a normal amount of spaces?
+            </AccordionTrigger>
+            <AccordionContent className="text-slate-600">
+              In English text, spaces typically make up about 15-20% of the total characters. This varies by language and writing style. Spaces are essential for readability - too few makes text hard to read, while too many can look unprofessional.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </div>
     </div>
   );
 };
