@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Cloud, Heart } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 const SpaceHighlighter = () => {
   const [text, setText] = useState('');
